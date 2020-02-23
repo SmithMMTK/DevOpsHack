@@ -134,14 +134,14 @@ run app.js
 
 ### Change Middle server connection IP Address
 
-Switch desktop and get Ubuntu server IP Address
+- Switch desktop and get Ubuntu server IP Address
 
 ```bash
 az vm list -d -o table
 
 ```
 
-Allow incomming request to PORT 3000
+- Allow incomming request to PORT 3000
 
 ![href](/images/allownsg.png)
 
@@ -149,10 +149,16 @@ Allow incomming request to PORT 3000
 [Reference](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/nsg-quickstart-portal)
 
 
-Modify deployment file [wfe-aks.yaml](/sources/wfe/kubefiles/wfe-ake.yaml) in middle server portion to reflect to VM IP address
+- Modify deployment file [wfe-aks.yaml](/sources/wfe/kubefiles/wfe-ake.yaml) in middle server portion to reflect to VM IP address
 ```yaml
         - name: middleserver
           value: "smi15middle.southeastasia.cloudapp.azure.com"
+```
+
+- Redeploy to AKS
+
+```bash
+kubectl apply -f wfe-aks.yaml
 ```
 
 ### Optional (Deploy internal loadbalance by VNET IP address)
