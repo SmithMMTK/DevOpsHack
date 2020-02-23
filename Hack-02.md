@@ -52,3 +52,5 @@ open http://localhost:8082/form
 #docker ps
 #docker container stop {id}
 ```
+
+- Next step: Can you create Dockerfile for Middle ?
