@@ -85,13 +85,7 @@ az aks create \
 
 az aks get-credentials --resource-group $rg --name $akscluster
 
-```
-### Create ACR
-
-
-
-
-```
+``` 
 
 
 
