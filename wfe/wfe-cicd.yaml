@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: multi-wfe
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: multi-wfe
+  template:
+    metadata:
+      labels:
+        app: multi-wfe
+    spec:
+      containers:
+      - name: multi-wfe
+        image: azsmi15acr.azurecr.io/multi-wfe:BUILDNUMBER
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 250m
+            memory: 256Mi
+        ports:
+        - containerPort: 80
+        env:
+        - name: middleserver
+          value: "smi15middle.southeastasia.cloudapp.azure.com"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: multi-wfe
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8082
+  selector:
+    app: multi-wfe
