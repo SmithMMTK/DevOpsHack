@@ -40,12 +40,15 @@ docker build -t multi-wfe .
 docker images
 ```
 
-```bash
+- Run docker
+```
 docker run -d -p 8082:8082 multi-wfe 
+open http://localhost:8082/form
+```
 
-docker run -it multi-wfe bash
-
-open http://localhost/form
-
-docker container stop {id}
+- Option (debuging container)
+```bash
+#docker run -it multi-wfe bash
+#docker ps
+#docker container stop {id}
 ```
