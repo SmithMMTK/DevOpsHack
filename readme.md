@@ -9,6 +9,6 @@
 - [Hack-03 Containerize Delployment (ACR, AKS)](/Hack-03.md) : 90 minutes
 - [Hack-04 Working with Azure DevOps (Pre-define teamplate)](/Hack-04.md) : 60 minutes
 - [Hack-05 Kubenetes cluster operation and applications deployment](/Hack-05.md) : 60 minutes
-- Hack-06 Compose it together : 90 minutes
+- [Hack-06 Compose it together](/Hack-06) : 90 minutes
 
 Recommend to run on Ubuntu 16 or higher environment

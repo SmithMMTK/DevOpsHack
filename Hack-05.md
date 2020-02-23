@@ -113,6 +113,48 @@ kubectl get services
 
 ---
 
+### Create Ubuntu VM and deploy Middle server 
+
+- Quickstart: Create a Linux virtual machine in the Azure portal 
+[Link](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-portal)
+
+- Deploy Middle server into this VM
+
+SSH into VM
+
+```bash
+
+git clone https://github.com/SmithMMTK/DevOpsHack 
+
+cd /DevOpsHack/sources/middle
+npm init -y
+npm install -y
+run app.js
+```
+
+### Change Middle server connection IP Address
+
+Switch desktop and get Ubuntu server IP Address
+
+```bash
+az vm list -d -o table
+
+```
+
+Allow incomming request to PORT 3000
+
+![href](/images/allownsg.png)
+
+
+[Reference](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/nsg-quickstart-portal)
+
+
+Modify deployment file [wfe-aks.yaml](/sources/wfe/kubefiles/wfe-ake.yaml) in middle server portion to reflect to VM IP address
+```yaml
+        - name: middleserver
+          value: "smi15middle.southeastasia.cloudapp.azure.com"
+```
+
 ### Optional (Deploy internal loadbalance by VNET IP address)
 
 Review deployment file [wfe-aks-vnet.yaml](/sources/wfe/kubefiles/wfe-aks-vnet.yaml)
@@ -130,3 +172,7 @@ spec:
 ```bash
 kubectl apply -f wfe-aks-vnet.yaml
 ```
+
+### Optional Hack 
+
+Create Deployment file and deploy middle to cluster
