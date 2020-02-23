@@ -19,6 +19,6 @@ echo $middleserver
 
 ### Create WFE container image
 
-Open and review dockerfile [/DevOpsHack/sources/wfe/dockerfile](/DevOpsHack/sources/wfe/dockerfile)
+Open and review dockerfile [/sources/wfe/dockerfile](/sources/wfe/app/dockerfile)
 
 
