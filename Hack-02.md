@@ -19,6 +19,33 @@ echo $middleserver
 
 ### Create WFE container image
 
-Open and review dockerfile [/sources/wfe/dockerfile](/sources/wfe/app/dockerfile)
+- Open and review dockerfile [/sources/wfe/dockerfile](/sources/wfe/app/dockerfile)
+```dockerfile
+FROM node:10
+WORKDIR /usr/src/app
+COPY package*.json ./
 
+RUN npm install
 
+COPY . .
+
+EXPOSE 8082
+CMD [ "node", "app.js" ]
+```
+
+- Build docker image
+
+```bash
+docker build -t multi-wfe .
+docker images
+```
+
+```bash
+docker run -d -p 8082:8082 multi-wfe 
+
+docker run -it multi-wfe bash
+
+open http://localhost/form
+
+docker container stop {id}
+```
