@@ -16,3 +16,9 @@ echo $middleserver
 [How to initialize?](https://github.com/SmithMMTK/DevOpsHack/blob/master/Hack-01.md#prepare-environment-parameter)
 
 --- 
+
+### Create WFE container image
+
+Open and review dockerfile [/DevOpsHack/sources/wfe/dockerfile](/DevOpsHack/sources/wfe/dockerfile)
+
+
