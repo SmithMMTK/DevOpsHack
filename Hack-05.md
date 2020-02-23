@@ -49,7 +49,7 @@ az acr repository show-tags --name $acr --repository multi-wfe --output table
 
 ### Working with deployment file
 
-Review deployment file [wfe.yaml](/sources/wfe/kubefiles/wfe-ake.yaml)
+Review deployment file [wfe-aks.yaml](/sources/wfe/kubefiles/wfe-ake.yaml)
 
 ```yaml
 apiVersion: apps/v1
@@ -111,6 +111,22 @@ kubectl get pods
 kubectl get services
 ```
 
-
-
 ---
+
+### Optional (Deploy internal loadbalance by VNET IP address)
+
+Review deployment file [wfe-aks-vnet.yaml](/sources/wfe/kubefiles/wfe-aks-vnet.yaml)
+
+```yaml
+spec:
+  loadBalancerIP: 192.168.1.100
+  type: LoadBalancer
+  ports:
+  - port: 8082
+  selector:
+    app: multi-wfe
+```
+
+```bash
+kubectl apply -f wfe-aks-vnet.yaml
+```
