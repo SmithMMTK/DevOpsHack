@@ -3,7 +3,7 @@
 ## Agenda
 
 - Introduction to Azure (AKS, ACR, ACI, App Services): 60 minutes
-- [Prepare Environment (Azure Subscription, VS Code, AZ CLI, Docker)](/PrepareEnvironment.md): 45 minutes
+- [Prepare Environment (Azure Subscription, VS Code, AZ CLI, Nodejs, Docker)](/PrepareEnvironment.md): 45 minutes
 - Hack-01 Create WFE <-> Middle applications : 30 minutes
 - Hack-02 Containerize (Docker, Kubernetest) : 90 minutes
 - Hack-03 Containerize Delployment (ACR, AKS) : 90 minutes
