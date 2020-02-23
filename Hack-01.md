@@ -43,16 +43,17 @@ __*** Write down all parameters especially $acr and $acrserver ***__
 
 ## Create application servers
 
+### Clone repo
+```
+git clone https://github.com/SmithMMTK/DevOpsHack 
+```
+
 ### Create WFE server
 
 - Create working directory
 
 ```bash
-mkdir wfe
-cd wfe
-curl https://raw.githubusercontent.com/SmithMMTK/DevOpsHack/master/sources/wfe/app.js -o app.js
-curl https://raw.githubusercontent.com/SmithMMTK/DevOpsHack/master/sources/wfe/package-lock.json -o package-lock.json
-curl https://raw.githubusercontent.com/SmithMMTK/DevOpsHack/master/sources/wfe/package.json -o package.json
+cd /DevOpsHack/sources/wfe
 npm init -y
 npm install -y
 ```
@@ -82,9 +83,65 @@ request.post(`http://${process.env.middleserver}:3000/validate`, {
       }
 ```
 
+- Run WFE server
+```bash
+node app.js
+```
+
 ### Create Middle-tier server
+- Create working directory
+```bash
+cd /DevOpsHack/sources/middle
+npm init -y
+npm install -y
+```
 
+- Review code 
+```javascript
+app.post('/validate',(req,res)=>{
+    //console.log(req.body)
+    //res.send(req.body)
+    
+    try {
+        console.log(req.body)
+      } catch(err) {
+        console.error(err)
+      }
+    
+    //let jsonobj = JSON.stringify(req.body)
+    
+    var approval = "reject"
 
-### Create CLI server
+  
+    if (req.body.title.toLowerCase() == 'csa') {
+      approval = "accepted"
+    
+    } else {
+      approval = "rejected"
+    }
+    
+    console.log(`approval status: ${approval}`)
+    
+    res.send(approval)
+    
+})
+
+// app.use((error,req, res,next) => {
+//    res.status(500).send(error)
+//})
+
+// Example command to call:
+// curl -d '{"name": "smith","title": "CSA"}' http://localhost:3000/validate -i -H 'Content-Type: application/json'
+//
+```
+
+- Run middle server
+```bash
+node app.js
+```
+
+- Test WFE <-> middle
+
+Open [http://localhost:8082/form:8082](http://localhost:8082/form:8082)
 
 ---
