@@ -17,11 +17,19 @@ echo $middleserver
 
 --- 
 
-### Create VNET
-```bash
+### Create ACR
 
+```bash
 az group create --name $rg --location southeastasia
 
+az acr create --resource-group $rg --name $acr --sku Basic
+az acr login --name $acr
+```
+
+---
+
+### Create VNET
+```bash
 
 az network vnet create \
     --resource-group $rg \
