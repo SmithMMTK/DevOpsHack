@@ -1,4 +1,4 @@
-## Hack-02 Containerize (Docker, Kubernetest)
+## Hack-02 Containerize (Docker)
 ---
 ### Display parameter
 
