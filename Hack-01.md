@@ -21,6 +21,7 @@ export akssubnet="azAKSsubnet"
 export vnetaddress="192.168.0.0/16"
 export vnetsubnet="192.168.1.0/24"
 export akscluster="azAKSCluster"
+export randomIdstr=26684
 export acr=azacr$randomIdstr
 export acrserver=$acr.azurecr.io
 export middleserver=127.0.0.1
