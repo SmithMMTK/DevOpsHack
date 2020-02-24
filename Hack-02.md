@@ -60,6 +60,8 @@ open http://localhost:8082/form
 ### Terminal to container
 ```bash
 docker run -it multi-wfe bash
+curl -d '{"name": "smith","title": "CSA"}' http://127.0.0.1:3000/validate -i -H 'Content-Type: application/json'
+
 ```
 
 ### Enable IP forward
