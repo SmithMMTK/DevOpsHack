@@ -148,4 +148,8 @@ node app.js
 
 Open [http://localhost:8082/form:8082](http://localhost:8082/form:8082)
 
+```bash
+curl -d '{"name": "smith","title": "CSA"}' http://172.20.10.2:3000/validate -i -H 'Content-Type: application/json'
+```
+
 ---
