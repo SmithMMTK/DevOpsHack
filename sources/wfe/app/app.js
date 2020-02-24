@@ -15,7 +15,10 @@ var server = app.listen(8082, function () {
   var host = server.address().address
   var port = server.address().port
   console.log(`Environment ${process.env.middle-server}`)
-  // export middleserver=127.0.0.1
+  // 
+  // Get IP of middleserver
+  // export middleserver=IP_ADDRESS_RETURN_FROM_MIDDLE_SERVER
+  // get IP from docker run -p 3000:3000 CONTAINERIMAGE
   console.log("%s listening at %s:%s", hostname, ip.address(), port)
 });
  

@@ -24,8 +24,10 @@ export akscluster="azAKSCluster"
 export randomIdstr=26684
 export acr=azacr$randomIdstr
 export acrserver=$acr.azurecr.io
-export middleserver=127.0.0.1
+export middleserver=IPADDRSS_OF_MIDDLE_SERVER
 ```
+
+___Do not user 127.0.0.1 of IPADDRSS_OF_MIDDLE_SERVER__
 
 ### Display parameter
 ```bash
