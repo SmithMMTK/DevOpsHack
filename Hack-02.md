@@ -54,3 +54,10 @@ open http://localhost:8082/form
 ```
 
 - Next step: Can you create Dockerfile for Middle ?
+
+---
+
+### Terminal to container
+```bash
+docker run -it multi-wfe bash
+```
