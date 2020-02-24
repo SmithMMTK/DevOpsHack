@@ -27,7 +27,7 @@ export acrserver=$acr.azurecr.io
 export middleserver=IPADDRSS_OF_MIDDLE_SERVER
 ```
 
-___Do not user 127.0.0.1 of IPADDRSS_OF_MIDDLE_SERVER__
+__Do not user 127.0.0.1 of IPADDRSS_OF_MIDDLE_SERVER__
 
 ### Display parameter
 ```bash
