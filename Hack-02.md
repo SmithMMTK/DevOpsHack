@@ -61,3 +61,8 @@ open http://localhost:8082/form
 ```bash
 docker run -it multi-wfe bash
 ```
+
+### Enable IP forward
+```bash
+sudo sysctl -w net.inet.ip.forwarding=1
+```
