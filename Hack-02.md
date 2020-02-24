@@ -33,6 +33,12 @@ EXPOSE 8082
 CMD [ "node", "app.js" ]
 ```
 
+- Start Middle tier server
+```
+node ./sources/middle/app.js
+```
+
+
 - Build docker image
 
 ```bash
@@ -40,26 +46,26 @@ docker build -t multi-wfe .
 docker images
 ```
 
+- Run Middle Server
+```bash
+cd /sources/middle
+node app.js
+
+```
+
+
+
+
+- Modify middle server IP address
+[.env file](/sources/wfe/.env)
+
+
 - Run docker
 ```
-docker run -d -p 8082:8082 multi-wfe 
+docker run -d -p --env-file ./.env 8082:8082 multi-wfe 
 open http://localhost:8082/form
 ```
 
-```bash
-cd ..\sources\middle\
-docker build -t multi-middle .
-docker images
-docker run -p 3000:3000 multi-middle
-```
-
-
-- Export middleserver IP address
-```bash
-export middleserver=IPADDRSS_OF_MIDDLE_SERVER
-```
-
-__Do not user 127.0.0.1 of IPADDRSS_OF_MIDDLE_SERVER__
 
 - Option (debuging container)
 ```bash
