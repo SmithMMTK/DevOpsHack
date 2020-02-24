@@ -46,6 +46,14 @@ docker run -d -p 8082:8082 multi-wfe
 open http://localhost:8082/form
 ```
 
+```bash
+cd ..\sources\middle\
+docker build -t multi-middle .
+docker images
+docker run -p 3000:3000 multi-middle
+```
+
+
 - Export middleserver IP address
 ```bash
 export middleserver=IPADDRSS_OF_MIDDLE_SERVER
@@ -60,7 +68,6 @@ __Do not user 127.0.0.1 of IPADDRSS_OF_MIDDLE_SERVER__
 #docker container stop {id}
 ```
 
-- Next step: Can you create Dockerfile for Middle ?
 
 ---
 
