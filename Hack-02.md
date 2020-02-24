@@ -46,6 +46,13 @@ docker run -d -p 8082:8082 multi-wfe
 open http://localhost:8082/form
 ```
 
+- Export middleserver IP address
+```bash
+export middleserver=IPADDRSS_OF_MIDDLE_SERVER
+```
+
+__Do not user 127.0.0.1 of IPADDRSS_OF_MIDDLE_SERVER__
+
 - Option (debuging container)
 ```bash
 #docker run -it multi-wfe bash
