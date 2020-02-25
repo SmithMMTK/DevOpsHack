@@ -41,6 +41,9 @@ az network vnet create \
 ```
 
 ### Create AD SP 
+
+> Note: Ensure user has Application Developer role assignment in Azure Active Directory
+
 ```bash
 az ad sp create-for-rbac --skip-assignment
 
